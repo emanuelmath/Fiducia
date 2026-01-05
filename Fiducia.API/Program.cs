@@ -1,6 +1,5 @@
 using Fiducia.Application.Interfaces;
 using Fiducia.Application.Services;
-using Fiducia.Domain.Interfaces;
 using Fiducia.Domain.Services;
 using Fiducia.Infrastructure.Persistence;
 using Fiducia.Infrastructure.Repositories;
