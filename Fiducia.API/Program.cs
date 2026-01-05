@@ -15,7 +15,6 @@ builder.Services.AddDbContext<FiduciaDbContext>(options =>
 
 //DI.
 builder.Services.AddScoped<ILoanRepository, LoanRepository>();
-builder.Services.AddScoped<IAmortizationCalculator, AmortizationCalculator>();
 builder.Services.AddScoped<ILoanService, LoanService>();
 
 // Add services to the container.

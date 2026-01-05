@@ -5,10 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Fiducia.Domain.Interfaces
+namespace Fiducia.Application.Interfaces
 {
-    public interface IAmortizationCalculator
+    public interface ILoanRepository
     {
-        List<AmortizationRow> CalculateAmortization(Loan loan);
+        Task AddAsync(Loan loan);
+        Task<Loan?> GetByIdAsync(Guid Id);
     }
 }

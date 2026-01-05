@@ -1,12 +1,11 @@
-﻿using Fiducia.Domain.Interfaces;
-using Fiducia.Infrastructure.Persistence;
+﻿using Fiducia.Infrastructure.Persistence;
 using Fiducia.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Reflection.Metadata.Ecma335;
+using Fiducia.Application.Interfaces;
 
 namespace Fiducia.Infrastructure.Repositories
 {

@@ -1,6 +1,5 @@
 ﻿using Fiducia.Domain.Entities;
 using Fiducia.Domain.Exceptions;
-using Fiducia.Domain.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Fiducia.Domain.Services
 {
-    public class AmortizationCalculator : IAmortizationCalculator
+    public class AmortizationCalculator 
     {
         public List<AmortizationRow> CalculateAmortization(Loan loan)
         {
