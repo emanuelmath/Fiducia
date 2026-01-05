@@ -1,4 +1,22 @@
+using Fiducia.Application.Interfaces;
+using Fiducia.Application.Services;
+using Fiducia.Domain.Interfaces;
+using Fiducia.Domain.Services;
+using Fiducia.Infrastructure.Persistence;
+using Fiducia.Infrastructure.Repositories;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
+
+// DbContext.
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddDbContext<FiduciaDbContext>(options =>
+    options.UseSqlServer(connectionString));
+
+//DI.
+builder.Services.AddScoped<ILoanRepository, LoanRepository>();
+builder.Services.AddScoped<IAmortizationCalculator, AmortizationCalculator>();
+builder.Services.AddScoped<ILoanService, LoanService>();
 
 // Add services to the container.
 
