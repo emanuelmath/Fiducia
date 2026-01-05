@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36804.6 d17.14
+VisualStudioVersion = 17.14.36804.6
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fiducia.Domain", "Fiducia.Domain\Fiducia.Domain.csproj", "{BAD9A281-BF25-4AA4-8C97-B939A6846BD6}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fiducia.Infrastructure", "Fiducia.Infrastructure\Fiducia.Infrastructure.csproj", "{FB0D7AC3-BA68-4DB0-928B-83764AC78220}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fiducia.API", "Fiducia.API\Fiducia.API.csproj", "{287782E4-99F8-4D67-997F-80E662CF556F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fiducia.Tests", "Fiducia.Tests\Fiducia.Tests.csproj", "{F4B96B17-EA1A-4190-8345-CC338088EA92}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{287782E4-99F8-4D67-997F-80E662CF556F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{287782E4-99F8-4D67-997F-80E662CF556F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{287782E4-99F8-4D67-997F-80E662CF556F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4B96B17-EA1A-4190-8345-CC338088EA92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4B96B17-EA1A-4190-8345-CC338088EA92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4B96B17-EA1A-4190-8345-CC338088EA92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4B96B17-EA1A-4190-8345-CC338088EA92}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

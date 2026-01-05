@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Fiducia.Domain.Exceptions
 {
-    internal class AmortizationCalculatorException
+    public class AmortizationCalculatorException : Exception
     {
+        public AmortizationCalculatorException(string message) : base(message) 
+        {
+            
+        }
     }
 }

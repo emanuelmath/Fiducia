@@ -11,9 +11,9 @@ namespace Fiducia.Domain.Entities
     {
         public Guid Id { get; set; }
         public Guid ClientId { get; set; }
-        public decimal Amount { get; set; }
-        public decimal InterestRate { get; set; }
-        public int TermMonths { get; set; }
+        public decimal Amount { get; set; } // Monto Solicitado. P
+        public decimal InterestRate { get; set; } // Tasa De Interés. i
+        public int TermMonths { get; set; } // Meses Para Pagar. n
         public LoanStatus Status { get; set; }
         public DateTime RequestDate { get; set; } 
         public DateTime? DisbursementDate { get; set; } 
