@@ -2,7 +2,7 @@
 using Fiducia.Application.Interfaces;
 using Fiducia.Domain.Entities;
 using Fiducia.Domain.Enums;
-using Fiducia.Domain.Services;
+using Fiducia.Domain.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Fiducia.Application.Services
 {
-    public class LoanService(ILoanRepository loanRepository) : ILoanService
+    public class LoanService(ILoanRepository loanRepository, IAmortizationCalculator amortizationCalculator) : ILoanService
     {
         public async Task<LoanResult> CreateLoanAsync(LoanRequest request)
         {
@@ -33,8 +33,7 @@ namespace Fiducia.Application.Services
                 FinishedDate = null
             };
 
-            var calculator = new AmortizationCalculator();
-            List<AmortizationRow> amortizationSchedule = calculator.CalculateAmortization(currentLoan);
+            List<AmortizationRow> amortizationSchedule = amortizationCalculator.CalculateAmortization(currentLoan).ToList();
 
             await loanRepository.AddAsync(currentLoan);
 

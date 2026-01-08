@@ -35,7 +35,7 @@ namespace Fiducia.Tests
             var calculator = new AmortizationCalculator();
 
             // Act.
-            var result = calculator.CalculateAmortization(loan);
+            var result = calculator.CalculateAmortization(loan).ToList();
 
             // Asserts:
 

@@ -1,5 +1,6 @@
 using Fiducia.Application.Interfaces;
 using Fiducia.Application.Services;
+using Fiducia.Domain.Interfaces;
 using Fiducia.Domain.Services;
 using Fiducia.Infrastructure.Persistence;
 using Fiducia.Infrastructure.Repositories;
@@ -15,6 +16,7 @@ builder.Services.AddDbContext<FiduciaDbContext>(options =>
 //DI.
 builder.Services.AddScoped<ILoanRepository, LoanRepository>();
 builder.Services.AddScoped<ILoanService, LoanService>();
+builder.Services.AddScoped<IAmortizationCalculator, AmortizationCalculator>();
 
 // Add services to the container.
 
