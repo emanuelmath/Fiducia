@@ -12,20 +12,8 @@ namespace Fiducia.API.Controllers
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] LoanRequest request)
         {
-            try
-            {
-               var loanResult = await loanService.CreateLoanAsync(request);    
-
-                return Ok(loanResult);
-            }
-            catch (ArgumentException ex)
-            {
-                return BadRequest(new { message = ex.Message });
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, new { message = "An internal error occurred.", details = ex.Message });
-            }
+             var loanResult = await loanService.CreateLoanAsync(request);    
+             return Ok(loanResult);
         }
     }
 }

@@ -3,6 +3,7 @@ using Fiducia.Application.Interfaces;
 using Fiducia.Domain.Entities;
 using Fiducia.Domain.Enums;
 using Fiducia.Domain.Interfaces;
+using FluentValidation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,14 +12,11 @@ using System.Threading.Tasks;
 
 namespace Fiducia.Application.Services
 {
-    public class LoanService(ILoanRepository loanRepository, IAmortizationCalculator amortizationCalculator) : ILoanService
+    public class LoanService(ILoanRepository loanRepository, IAmortizationCalculator amortizationCalculator, IValidator<LoanRequest> validator) : ILoanService
     {
         public async Task<LoanResult> CreateLoanAsync(LoanRequest request)
         {
-            if (request.Amount <= 0)
-                throw new ArgumentException("Amount must be greater than zero.");
-            if (request.TermMonths <= 0)
-                throw new ArgumentException("Term must be greater than zero.");
+           await validator.ValidateAndThrowAsync(request);
 
             Loan currentLoan = new()
             {
