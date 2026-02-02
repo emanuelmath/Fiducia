@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Fiducia.Domain.Services
 {
-    public class AmortizationCalculator : IAmortizationCalculator
+    public class FrenchAmortizationCalculator : IAmortizationCalculator
     {
         public IEnumerable<AmortizationRow> CalculateAmortization(Loan loan)
         {

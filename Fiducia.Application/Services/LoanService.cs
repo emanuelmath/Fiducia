@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Fiducia.Application.Services
 {
-    public class LoanService(ILoanRepository loanRepository, IAmortizationCalculator amortizationCalculator, IValidator<LoanRequest> validator) : ILoanService
+    public class LoanService(ILoanRepository loanRepository, IAmortizationFactory amortizationFactory, IValidator<LoanRequest> validator) : ILoanService
     {
         public async Task<LoanResult> CreateLoanAsync(LoanRequest request)
         {
@@ -31,7 +31,7 @@ namespace Fiducia.Application.Services
                 FinishedDate = null
             };
 
-            List<AmortizationRow> amortizationSchedule = amortizationCalculator.CalculateAmortization(currentLoan).ToList();
+            List<AmortizationRow> amortizationSchedule = amortizationFactory.CreateCalculator(request.TypeOfAmortization).CalculateAmortization(currentLoan).ToList();
 
             await loanRepository.AddAsync(currentLoan);
 

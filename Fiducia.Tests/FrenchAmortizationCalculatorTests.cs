@@ -5,10 +5,10 @@ using Xunit;
 
 namespace Fiducia.Tests
 {
-    public class AmortizationCalculatorTests
+    public class FrenchAmortizationCalculatorTests
     {
         [Fact]
-        public void CalculateAmortization_ShouldReturnValidSchedule_ForStandardLoan()
+        public void FrenchCalculateAmortization_ShouldReturnValidSchedule_ForStandardLoan()
         {
             // Values for the test. 
             const int PAYMENT_MONTH = 1;
@@ -32,7 +32,7 @@ namespace Fiducia.Tests
             };
 
             // Service.
-            var calculator = new AmortizationCalculator();
+            var calculator = new FrenchAmortizationCalculator();
 
             // Act.
             var result = calculator.CalculateAmortization(loan).ToList();

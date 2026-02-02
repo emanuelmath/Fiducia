@@ -26,6 +26,9 @@ namespace Fiducia.Application.Validators
 
             RuleFor(x => x.InterestRate)
                 .GreaterThan(0).WithMessage("Interest rate must be greater than 0%.");
+
+            RuleFor(x => x.TypeOfAmortization)
+            .IsInEnum().WithMessage("Select a valid amortization system.");
         }
     }
 } 
